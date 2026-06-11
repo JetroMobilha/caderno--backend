@@ -15,4 +15,8 @@ class Notebook extends Model
     public function subject() {
         return $this->belongsTo(Subject::class);
     }
+
+    public function pages() {
+        return $this->hasMany(Page::class);
+    }
 }
