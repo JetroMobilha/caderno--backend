@@ -19,4 +19,10 @@ class Notebook extends Model
     public function pages() {
         return $this->hasMany(Page::class);
     }
+
+    // Um caderno pode ser partilhado com VÁRIOS utilizadores
+    public function sharedUsers()
+    {
+        return $this->belongsToMany(User::class)->withPivot('role')->withTimestamps();
+    }
 }

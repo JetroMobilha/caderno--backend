@@ -57,6 +57,9 @@ Route::middleware('auth:sanctum')->group(function () {
     // Rota para o Flutter salvar/sincronizar os traços de uma página de um caderno
     Route::post('/notebooks/{notebook_id}/pages', [App\Http\Controllers\PageController::class, 'store']);
 
+    // Rota para partilhar um caderno
+    Route::post('/notebooks/{notebook_id}/share', [App\Http\Controllers\NotebookShareController::class, 'store']);
+    
     // FUTURO: Aqui vão entrar as rotas de criar Cadernos, Disciplinas, etc!
 });
 

@@ -53,4 +53,10 @@ class User extends Authenticatable
     public function subjects() {
         return $this->hasMany(Subject::class);
     }
+
+    // Um utilizador tem acesso a VÁRIOS cadernos partilhados
+    public function sharedNotebooks()
+    {
+        return $this->belongsToMany(Notebook::class)->withPivot('role')->withTimestamps();
+    }
 }
